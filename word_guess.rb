@@ -5,12 +5,12 @@ class WordGuess
 
     # possible words, selected at random
     @words = {
-      "e" => %w(dog cat bug hat cap lit kin fan fin fun tan ten tin ton),
-      "m" => %w(plain claim brine crime alive bride skine drive slime stein jumpy),
-      "h" => %w(
-          machiavellian prestidigitation plenipotentiary quattuordecillion
-          magnanimous unencumbered bioluminescent circumlocution
-        )
+      # "e" => %w(dog cat bug hat cap lit kin fan fin fun tan ten tin ton),
+      # "m" => %w(plain claim brine crime alive bride skine drive slime stein jumpy),
+      # "h" => %w(
+      #     machiavellian prestidigitation plenipotentiary quattuordecillion
+      #     magnanimous unencumbered bioluminescent circumlocution
+      #   )
     }
 
     # players attempts allowed by difficulty
@@ -21,7 +21,7 @@ class WordGuess
     }
 
     # ask the user to set the game mode
-    mode = set_mode
+    mode = set_mode #this is a method that makes mode the user input letter for difficulty
 
     @word    = @words[mode].sample # chosen word; players try to guess this
     @guesses = @tries[mode] # how many tries the player gets
@@ -130,5 +130,9 @@ class WordGuess
     letter
   end
 end
+
+# def load_words_data
+#   CSV.open('words.csv', 'r').each do |line|
+#     @words <<
 
 WordGuess.new
